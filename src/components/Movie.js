@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import question_mark from "../question_mark.png";
 
-const Movie = ({ movie, onMovieClick }) => {
-  const [selected, setSelected] = useState(false);
-  const onChecked = (e) => {
-    setSelected(e.target.checked ? true : false);
-  };
+const Movie = ({ movie, onMovieClick, onChecked }) => {
+  // const [selected, setSelected] = useState(false);
+  // console.log(selected);
+  // const onChecked = (e) => {
+  //   setSelected(e.target.checked ? true : false);
+  // };
 
-  const addToList = selected ? movie.Title : "";
+  const onMovieChecked = (e) => {
+    onMovieClick(movie.Title);
+    onChecked(e);
+  };
 
   return (
     <div className="movie">
@@ -22,13 +26,10 @@ const Movie = ({ movie, onMovieClick }) => {
         <input
           id="select"
           type="checkbox"
-          // onChange={() => onMovieClick(movie.Title)}
-          onChange={() => onMovieClick(movie.Title)}
+          onChange={onMovieChecked}
           defaultValue={false}
         />
         <label>Select</label>
-        <div>{selected ? "You have added this movie to your list" : ""}</div>
-        <div>{addToList}</div>
       </div>
     </div>
   );
