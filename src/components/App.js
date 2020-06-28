@@ -54,7 +54,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header text="FAST Movie Search" />
+      <Header text="Movie Search" />
       <Search search={search} />
       <p className="App-intro">Search for your favorite movies!</p>
 
