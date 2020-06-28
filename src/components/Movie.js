@@ -18,7 +18,6 @@ const Movie = ({ movie, onMovieClick }) => {
           src={movie.Poster === "N/A" ? question_mark : movie.Poster}
         />
       </div>
-      <p>({movie.Year})</p>
       <div className="selectMovie">
         <input
           id="select"
