@@ -38,7 +38,7 @@ const App = () => {
       });
   }, []);
 
-  //add selected movies to array-- this is buggy when checking/unchecking and would solve with more time
+  //add selected movies to array-- this is buggy when checking/unchecking and I would solve with more time
   useEffect(() => {
     setList(clickedItem && selected ? (list) => [...list, clickedItem] : "");
   }, [clickedItem, selected]);
