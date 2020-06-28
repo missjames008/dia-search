@@ -9,8 +9,6 @@ const MOVIE_API_URL = "https://www.omdbapi.com/?s=days&apikey=5cbc208f";
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [clickedItem, setClickedItem] = useState(null);
-  const [selected, setSelected] = useState(false);
-  const [list, setList] = useState([]);
 
   const onMovieClick = (movie) => {
     setClickedItem(movie);
