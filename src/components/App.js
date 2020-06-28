@@ -4,6 +4,7 @@ import Header from "./Header";
 import Movie from "./Movie";
 import Search from "./Search";
 
+//default search for 'days' so populates on load
 const MOVIE_API_URL = "https://www.omdbapi.com/?s=days&apikey=5cbc208f";
 
 const App = () => {
@@ -12,20 +13,23 @@ const App = () => {
   const [clickedItem, setClickedItem] = useState(null);
   const [selected, setSelected] = useState(false);
 
+  //sets selected movie
   const onMovieClick = (movie) => {
     setClickedItem(movie);
-    console.log(movie);
   };
 
+  //sets check to t/f
   const onChecked = (e) => {
     setSelected(e.target.checked ? true : false);
   };
 
+  //alerts on confirm
   const confirmSelected = () =>
     list
       ? alert(`You have selected ${list}`)
       : alert("Please select at least one movie!");
 
+  //initial search/load
   useEffect(() => {
     fetch(MOVIE_API_URL)
       .then((response) => response.json())
@@ -34,10 +38,12 @@ const App = () => {
       });
   }, []);
 
+  //add selected movies to array-- this is buggy when checking/unchecking and would solve with more time
   useEffect(() => {
     setList(clickedItem && selected ? (list) => [...list, clickedItem] : "");
   }, [clickedItem, selected]);
 
+  //get searched movies
   const search = (searchValue) => {
     fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=5cbc208f`)
       .then((response) => response.json())

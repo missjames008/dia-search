@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 
 const Search = (props) => {
+  //set initial search value to empty
   const [searchValue, setSearchValue] = useState("");
 
+  //set search value according to input
   const handleSearchInputChanges = (e) => {
     setSearchValue(e.target.value);
   };
 
+  //reset search field to empty
   const resetInputField = () => {
     setSearchValue("");
   };
 
+  //execute search & reset
   const callSearchFunction = (e) => {
     e.preventDefault();
     props.search(searchValue);

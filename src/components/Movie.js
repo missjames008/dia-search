@@ -2,12 +2,7 @@ import React from "react";
 import question_mark from "../question_mark.png";
 
 const Movie = ({ movie, onMovieClick, onChecked }) => {
-  // const [selected, setSelected] = useState(false);
-  // console.log(selected);
-  // const onChecked = (e) => {
-  //   setSelected(e.target.checked ? true : false);
-  // };
-
+  //function to pass clicked/checked info back to parent
   const onMovieChecked = (e) => {
     onMovieClick(movie.Title);
     onChecked(e);
