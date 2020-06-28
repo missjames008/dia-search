@@ -56,7 +56,7 @@ const App = () => {
     <div className="App">
       <Header text="Movie Search" />
       <Search search={search} />
-      <p className="App-intro">Search for your favorite movies!</p>
+      <p className="subhead">Search for your favorite movies!</p>
 
       <div className="movies">
         {movies.map((movie, index) => (
