@@ -7,7 +7,6 @@ import Search from "./Search";
 const App = () => {
   const [articles, setArticles] = useState([]);
   const [sortValue, setSortValue] = useState("relevance");
-  //testing git commit
   //set sort value according to selection
   const handleSortInputChanges = (e) => {
     setSortValue(e.target.value);
