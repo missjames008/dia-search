@@ -14,14 +14,11 @@ const App = () => {
 
   //get searched articles
   const search = (searchValue) => {
-    console.log("search value", searchValue);
-    console.log("sortValue", sortValue);
     fetch(
       `http://newsapi.org/v2/everything?q=${searchValue}&language=en&sortBy=${sortValue}&apiKey=e8beefd6ada2467e93fbc952cd0aa753`
     )
       .then((response) => response.json())
       .then((jsonResponse) => {
-        console.log(jsonResponse);
         setArticles(jsonResponse.articles);
       });
   };
