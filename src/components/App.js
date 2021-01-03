@@ -33,9 +33,7 @@ const App = () => {
           onChange={handleSortInputChanges}
           type="text"
         >
-          <option selected value="relevancy">
-            Relevance
-          </option>
+          <option value="relevancy">Relevance</option>
           <option value="popularity">Popularity</option>
           <option value="publishedAt">Date</option>
         </select>
