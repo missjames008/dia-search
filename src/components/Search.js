@@ -24,9 +24,11 @@ const Search = (props) => {
   return (
     <form className="search">
       <input
+        className="search-input"
         value={searchValue}
         onChange={handleSearchInputChanges}
         type="text"
+        placeholder="Search by title, subject, keyword, etc"
       />
       <input
         onClick={callSearchFunction}

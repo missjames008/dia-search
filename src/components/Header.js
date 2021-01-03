@@ -1,10 +1,10 @@
 import React from "react";
-import fast_logo from "../fast_logo.svg";
+import logo from "../logo.png";
 
 const Header = (props) => {
   return (
     <header className="header">
-      <img height="50" src={fast_logo} />
+      <img height="50" src={logo} />
       <h2>{props.text}</h2>
     </header>
   );
